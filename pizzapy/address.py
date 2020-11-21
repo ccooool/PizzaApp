@@ -14,7 +14,7 @@ class Address(object):
         city (String): North American city
         region (String): North American region (state, province, territory)
         zip (String): North American ZIP code
-        urls (String): Country-specific URLs
+        urls (String): Country-specific URLs 
         country (String): Country
     """
 
