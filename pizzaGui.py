@@ -19,6 +19,8 @@ from screens.MenuPage import MenuPage
 from screens.Restaurant import RestPage
 from screens.CheckoutPage import CheckoutPage
 from screens.paypage import PayPage
+from screens.CreditCardPage import CreditCardPage
+
 
 def handle_focus_in(entry):
     entry.delete(0, tk.END)
@@ -32,8 +34,6 @@ def handle_enter(entry):
     handle_focus_out(entry)
 
 client = Client()
-
-
 
 # Class representing our overall page
 class Overall(tk.Tk):
@@ -50,9 +50,10 @@ class Overall(tk.Tk):
         self.customer = Customer("a", "b", "a@b.com", '3467837773', "700 Pennsylvaia Avenue NW, Washington, DC, 20408" )
         self.order = None
         # ADD ALL OTHER PAGES HERE IN THIS list
-        for F in (StartPage, InfoPage, RestPage, MenuPage, CheckoutPage,PayPage):
+        for F in (StartPage, InfoPage, RestPage, MenuPage, CheckoutPage, PayPage, CreditCardPage):
             page_name = F.__name__
             frame = F(parent=container, controller=self)
+            frame.configure(bg="blue")
             self.frames[page_name] = frame
             # put all of the pages in the same location;
             # the one on the top of the stacking order
@@ -71,4 +72,5 @@ class Overall(tk.Tk):
 
 root = Overall()
 root.geometry("900x900")
+root.configure(bg="blue")
 root.mainloop()

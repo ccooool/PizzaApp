@@ -134,5 +134,6 @@ class Order(object):
                     'PostalCode': card.zip
                 }
             ]
+        print(response)
 
         return response

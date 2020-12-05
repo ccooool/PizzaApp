@@ -10,13 +10,16 @@ class RestPage(tk.Frame):
         self.controller = controller
         self.bacc_button = ttk.Button(self, text= "Back", command=lambda: controller.show_frame("StartPage"),cursor='mouse')
         self.bacc_button.pack(pady="5")
-        label = tk.Label(self, text="This is the Restaurant page", font = ('Courier New',30) )
+        self.close_button = ttk.Button(self, text= "Quit", command=parent.quit)
+        self.close_button.pack(pady="5")
+        self.close_button.place(x = 0, y = 0)
+
+        label = tk.Label(self, text="This is the Restaurant page", font = ('Impact',30))
         label.pack(side="top", fill="x", pady=50)
-        self.close_button = ttk.Button(self, text= "Quit", command=parent.quit,cursor='mouse')
-        self.close_button.pack(pady="10")
         self.find_teh_closest_store = ttk.Button(self,text="Find stores nearby now!",command=lambda: self.show_the_stores_now(controller.customer.address))
         self.find_teh_closest_store.pack(side="bottom")
         self.labbell = None
+        self.confirm_add = None
         
         
     def show_the_stores_now(self, addr): 
@@ -25,10 +28,12 @@ class RestPage(tk.Frame):
         if len(stores) == 0:
             message = "please enter a valid address; no stores found near you"
         message = str(stores[0])
-        self.labbell = tk.Label(self,text = "found this store closest to you: \n" + message)
+        self.labbell = tk.Label(self,text = "we have found this store closest to you: \n" + message)
         self.labbell.pack(side = "bottom")
-        self.confirm_add=ttk.Button(self,text="looks good ( ͡° ͜ʖ ͡°)",command= lambda:self.confirm_rest(stores[0]))
-        self.confirm_add.pack(side="top")
+        
+        if self.confirm_add == None:
+            self.confirm_add=ttk.Button(self,text="Use this store",command= lambda:self.confirm_rest(stores[0]))
+            self.confirm_add.pack(side="top")
 
     def confirm_rest(self, chosen_rest):
         self.controller.customer.chosen_rst = chosen_rest

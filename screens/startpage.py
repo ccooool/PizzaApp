@@ -7,6 +7,9 @@ from PIL import ImageTk, Image
 
 
 
+
+
+
 # 6026 Ashford Falls Lane, Houston, Texas, 77479
 # Class representing our start page!
 class StartPage(tk.Frame):
@@ -15,12 +18,14 @@ class StartPage(tk.Frame):
         self.controller = controller
 
         # START MAKING YOUR LABELS, BUTTONS, ETC. FOR THE WELCOME PAGE HERE
-        label = tk.Label(self, text="Pizza Gui™", font=('Courier New',30))
+        label = tk.Label(self, text="Pizza Gui™", font=('Impact',60))
         label.pack(side="right", fill="x", pady=100)
         
-        self.close_button = ttk.Button(self, text= "Quit", command=parent.quit,cursor='cross')
+        self.close_button = ttk.Button(self, text= "Quit", command=parent.quit)
         self.close_button.pack(pady="5")
-        self.next_button = ttk.Button(self,text="Next",command = lambda: controller.show_frame('InfoPage'),cursor='cross')
+        self.close_button.place(x = 0, y = 0)
+
+        self.next_button = ttk.Button(self,text="Next",command = lambda: controller.show_frame('InfoPage'))
         self.next_button.pack(pady="10")
         
 
