@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------------------------------------------------------------
-This app is a dominoes ordering app where you can order food from a dominoes store.
+This app is a dominoes ordering app where you can order food from a dominoes store.                                                
 the app uses the dominoes API to locate stores nearest you and allow you to order food
 i created a GUI to make the ordering easier 
 -----------------------------------------------------------------------------------------------------------------------------------

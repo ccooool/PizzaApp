@@ -21,6 +21,9 @@ class CreditCardPage(tk.Frame):
 
         self.save_info_button = ttk.Button(self, text = "Finalize Card Info", command = lambda:self.save_info())
         self.save_info_button.pack()
+        self.card_valid_label = tk.Label(self, text = "")
+        self.card_valid_label.pack()
+
 
     def get_info(self): 
         self.banana = tk.Label(self, text="Please enter your Credit Card information", font = ('MS Gothic',20))
@@ -54,6 +57,7 @@ class CreditCardPage(tk.Frame):
         try:
             saved_card = CreditCard(card_number,expiration,cvv,thezip)
             print("credit card valid")
+            self.card_valid_label["text"] = "Credit Card has been validated!"
             place_command = print("placing card order")
             # place_command = self.controller.customer.chosen_rst.place_order(self.controller.order, card=saved_card)
             if self.place_card_order == None:
