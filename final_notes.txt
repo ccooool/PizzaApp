@@ -1,7 +1,103 @@
-delete or standardize titles
+1. API usage
+API: Application Programming Interface
+-- Allows us to access outside service, so we can add features to our apps
+- Weather App: Get the weather for any city
+- Pizza App: Get pizza locations/menus, place orders
 
-change highlighting on text
+2. Object Oriented Programming (OOP)
+We split up every component of the program into different objects. 
+Describe the objects using classes, which we coded.
+Menu, CreditCard, Info Page, are all different objects
+Why use OOP?
+-- allows us to separate different code easily, and make efficient and 
+scalable designs, and describe relationships between things
 
-high quality images
+3. Design Work 
+Thinking about where to place each component, how to create an app that flows well 
+for a good user experience. 
+
+
+
+Queue: LIFO
+Stack: FIFO
+
+Graphs: BFS
+
+
+Palindrome
+
+annna
+
+abccccba
+
+oooooo
+
+cartrac
+
+racecar 
+
+lol
+
+dad
+
+mom
+
+wow
+
+"carter" is NOT a Palindrome
+
+
+Given a string, how do you determine if it is a Palindrome as quickly as possible?
+"bbbbbbbbbccccccccccccdddddddddasdfgiasdfgyudfgeuasdf..."
+"nmnmnmnmnmnmnmnmn"
+
+"mokom"
+"abcddaiuhss"
+"jiiimkiiij"
+
+
+"cartercarter"
+
+
+
+first half = left to middle
+last half = right to middle
+
+
+is first half = last half, flipped?
+
+def is_palindrome(word):
+    middle = len(word)/2
+    left_half = word[0:middle]
+    right_half = word[middle:len(word) - 1]
+    right_half.reverse()
+    if left_half == right_half:
+        print("Palindrome")
+        return True
+    else 
+        print("NOT a Palindrome")
+        return False
+
+    
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

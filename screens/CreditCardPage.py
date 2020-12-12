@@ -59,7 +59,7 @@ class CreditCardPage(tk.Frame):
             print("credit card valid")
             self.card_valid_label["text"] = "Credit Card has been validated!"
             place_command = print("placing card order")
-            # place_command = self.controller.customer.chosen_rst.place_order(self.controller.order, card=saved_card)
+            place_command = self.controller.customer.chosen_rst.place_order(self.controller.order, card=saved_card)
             if self.place_card_order == None:
                 self.place_card_order = ttk.Button(self, text= "Place my order", command = place_command)
                 self.place_card_order.pack()

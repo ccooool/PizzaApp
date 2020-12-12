@@ -3,3 +3,6 @@ pyhamcrest
 xmltodict
 pytest
 mock
+pillow
+tkinter
+
